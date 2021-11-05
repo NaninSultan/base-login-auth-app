@@ -40,11 +40,17 @@ const Home = () => {
 
     return (
         <>
-        <Typography textAlign="center" variant="h3">Homepage</Typography>
-        <Card style={{width: "fit-content", height: "fit-content", padding: "20px", backgroundColor: "lightblue", margin: "auto", marginTop: "100px"}}>
+        { !user &&<Typography marginTop="20px" textAlign="center" variant="h3">Homepage</Typography>}
+        { user &&
+            <Typography textAlign="center" variant="h3" marginTop="20px">
+                Welcome {info.name}! <br/>
+                You can view your profile info below:
+            </Typography>
+        }
+        <Card style={{width: "fit-content", height: "fit-content", padding: "20px", backgroundColor: "lightblue", margin: "auto", marginTop: "50px"}}>
             { user &&
                 <CardContent>
-                <Typography textAlign="center" variant="h4">Name: {info.name}</Typography>
+                <Typography textAlign="center" variant="h4">Username: {info.name}</Typography>
                 <br />
                 <Typography textAlign="center" variant="h4">Email: {info.email}</Typography>
                 </CardContent>

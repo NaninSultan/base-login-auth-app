@@ -44,7 +44,7 @@ const Login = () => {
             <CardContent style={{}} >
                 <TextField type="text" label="Email" name="email" value={input.email} onChange={onChange} style={{ marginBottom: "10px" }} />
                 <br />
-                <TextField type="text" label="Password" name="password" value={input.password} onChange={onChange} />
+                <TextField type="password" label="Password" name="password" value={input.password} onChange={onChange} />
             <Typography color="red">{error}</Typography>
             </CardContent>
             <CardActions style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>

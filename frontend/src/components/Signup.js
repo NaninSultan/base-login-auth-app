@@ -34,6 +34,7 @@ const showLogin = () => {
             .then(res => {
                 console.log(res);
                 console.log(res.data)
+                dispatch(baseLoginActions.setModal({ login: true, signup: false }));
             }
         ).catch(err => setError(err.response.data.message))
         if(input.password !== input.confirmPassword) {
@@ -49,9 +50,9 @@ const showLogin = () => {
                 <br />
                 <TextField required type="text" label="Email" name="email" style={{ marginBottom: "10px" }} onChange={onChange} value={input.email} />
                 <br />
-                <TextField required type="text" label="Password" name="password" style={{ marginBottom: "10px" }} onChange={onChange} value={input.password} />
+                <TextField required type="password" label="Password" name="password" style={{ marginBottom: "10px" }} onChange={onChange} value={input.password} />
                 <br />
-                <TextField required type="text" label="Confirm Password" name="confirmPassword"  onChange={onChange} value={input.confirmPassword}/>
+                <TextField required type="password" label="Confirm Password" name="confirmPassword"  onChange={onChange} value={input.confirmPassword}/>
                 <br />
                 <Typography color="red">{error}</Typography>
             </CardContent>

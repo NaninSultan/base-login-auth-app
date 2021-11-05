@@ -15,8 +15,8 @@ exports.signup = async (req, res, next) => {
     }
 
     if (existingName) {
-        res.status(400).json({ message: "Username already in use, please choose another one." })
-        const err = new Error("Username already in use, please choose another one.", 400)
+        res.status(400).json({ message: "Name and email already in use, please choose another one." })
+        const err = new Error("Name and email already in use, please choose another one.", 400)
         return next(err) 
     }
 
@@ -30,8 +30,8 @@ exports.signup = async (req, res, next) => {
     }
 
     if (existingEmail) {
-        res.status(400).json({ message: "Email already in use." })
-        const err = new Error("Email already in use.", 400)
+        res.status(400).json({ message: "Name and email already in use, please choose another one." })
+        const err = new Error("Name and email already in use, please choose another one.", 400)
         return next(err) 
     }
 
